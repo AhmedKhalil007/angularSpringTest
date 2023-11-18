@@ -3,9 +3,6 @@ import { PersonneService } from 'src/app/services/personne.service';
 import { NgForm } from '@angular/forms';
 import { Personne } from 'src/app/models/personne.model'; 
 import { HttpErrorResponse } from '@angular/common/http';
-import { DatePipe } from '@angular/common';
-import { ApiResponse } from 'src/app/api/api-response.model';
-
 
 @Component({
   selector: 'app-ajouter-personne',
@@ -15,25 +12,20 @@ import { ApiResponse } from 'src/app/api/api-response.model';
 export class AjouterPersonneComponent {
   message: string = '';
 
-
   personne: Personne = {
     nomPersonne: '',
     prenomPersonne: '',
     agePersonne: 0,
     datePersonne: '' // Laissez la date en tant que chaîne
   };
-  datePipe: any;
 
-  constructor( private personneService: PersonneService) { }
+  constructor(private personneService: PersonneService) { }
   
-
   ajouterPersonne(): void {
-   
-
     this.personneService.ajouterPersonne(this.personne).subscribe(
-      (response: ApiResponse) => {
-        console.log('Personne ajoutée avec succès !', response.message);
-        this.message = response.message;  // Stockez le message dans la propriété du composant
+      (response: string) => {
+        console.log('Personne ajoutée avec succès !', response);
+        this.message = response;  // Stockez le message dans la propriété du composant
         // Traitez la réponse si nécessaire
       },
       (error: HttpErrorResponse) => {
