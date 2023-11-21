@@ -1,0 +1,25 @@
+<div class="container mt-4">
+    <h2>Liste des Personnes</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Âge</th>
+          <th>Date</th>
+          <!-- Ajoutez d'autres colonnes en fonction de votre modèle Personne -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let personne of personnes">
+          <td>{{ personne.idPersonne }}</td>
+          <td>{{ personne.nomPersonne }}</td>
+          <td>{{ personne.prenomPersonne }}</td>
+          <td>{{ personne.agePersonne }}</td>
+          <td>{{ personne.datePersonne }}</td>
+          <!-- Ajoutez d'autres colonnes en fonction de votre modèle Personne -->
+        </tr>
+      </tbody>
+    </table>
+  </div>

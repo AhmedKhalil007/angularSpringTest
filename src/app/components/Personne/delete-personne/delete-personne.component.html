@@ -1,0 +1,11 @@
+<form (ngSubmit)="deletePersonne()" class="mt-4">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom :</label>
+      <input type="text" id="nom" [(ngModel)]="personne.idPersonne" name="nom" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">supprimer Personne</button>
+</form>
+
+<div *ngIf="message" class="alert alert-success mt-3">
+  {{ message }}
+</div>

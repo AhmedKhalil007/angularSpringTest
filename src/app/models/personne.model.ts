@@ -1,5 +1,5 @@
 export interface Personne {
-    nomPersonne: string;
+    idPersonne?: number;    nomPersonne: string;
     prenomPersonne: string;
     agePersonne: number;
     datePersonne: string; // Format de date à envoyer au backend
