@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { updatePersonneComponent } from './components/Personne/update-personne/update-personne.component';
 import { DeletePersonneComponent } from './components/Personne/delete-personne/delete-personne.component';
 import { ListePersonnesComponent } from './components/Personne/liste-personnes/liste-personnes.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { GraphComponent } from './components/Personne/graph/graph.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,19 @@ import { ListePersonnesComponent } from './components/Personne/liste-personnes/l
     AjouterPersonneComponent,
     updatePersonneComponent,
     DeletePersonneComponent,
-    ListePersonnesComponent
+    ListePersonnesComponent,
+    GraphComponent
+    
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HighchartsChartModule
+    
     
   ],
   providers: [],

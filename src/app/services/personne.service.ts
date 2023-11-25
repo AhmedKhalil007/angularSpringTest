@@ -50,4 +50,7 @@ export class PersonneService {
   listePersonne(): Observable<Personne[]> {
     return this.http.get<Personne[]>('http://localhost:7090/personnes/listePersonne');
   }
+  getAgeDistribution(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:7090/personnes/graph');
+  }
 }
